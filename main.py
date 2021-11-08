@@ -34,5 +34,4 @@ for sitemap_url in sub_site_map_urls:
         site_urls.append(url.findNext('loc').text)
 
 for url in site_urls:
-    call_url(url).content
-    call_url(url).content
+    call_url(url)
