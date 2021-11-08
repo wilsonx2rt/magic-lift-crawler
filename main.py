@@ -25,13 +25,13 @@ def get_xml_tags(target_sitemap_url, target):
 
 
 for sitemap in get_xml_tags(site_map_index_url, 'sitemap'):
-    sitemap_index_dict[sitemap.findNext("loc").text] = sitemap.findNext("lastmod").text
+    sitemap_index_dict[sitemap.findNext('loc').text] = sitemap.findNext('lastmod').text
 
 sub_site_map_urls = sitemap_index_dict.keys()
 
 for sitemap_url in sub_site_map_urls:
     for url in get_xml_tags(sitemap_url, 'url'):
-        site_urls.append(url.findNext("loc").text)
+        site_urls.append(url.findNext('loc').text)
 
 for url in site_urls:
     call_url(url).content
