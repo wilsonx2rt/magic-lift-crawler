@@ -34,4 +34,5 @@ for sitemap_url in sub_site_map_urls:
         site_urls.append(url.findNext('loc').text)
 
 for url in site_urls:
-    call_url(url)
+    if 'event' not in url:
+        call_url(url)
